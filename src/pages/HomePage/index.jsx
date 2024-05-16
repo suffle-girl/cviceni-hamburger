@@ -4,11 +4,14 @@ import './style.css';
 
 export const HomePage = () => {
   const [menuOpened, setMenuOpened] = useState(true);
+  const [pageTitle, setPageTitle] = useState("Domů")
+
   const handleMenu = () => {
     setMenuOpened(!menuOpened);
   }
 
-  const handleSelectItem = () => {
+  const handleSelectItem = (page) => {
+    setPageTitle(page)
     setMenuOpened(false)
   }
 
@@ -27,7 +30,7 @@ export const HomePage = () => {
         </div>
       </header>
       <main>
-        <h1>Domů</h1>
+        <h1>{pageTitle}</h1>
       </main>
     </>
   );
